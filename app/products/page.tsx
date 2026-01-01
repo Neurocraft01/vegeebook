@@ -7,18 +7,18 @@ import { Check, ArrowRight, Leaf, ChefHat, Package } from "lucide-react";
 import Link from "next/link";
 
 const vegetables = [
-  { name: "Onion", type: "Root", desc: "Peeled, Sliced, Diced" },
-  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced" },
-  { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced" },
-  { name: "Ginger", type: "Root", desc: "Peeled, Paste, Julienne" },
-  { name: "Garlic", type: "Bulb", desc: "Peeled, Paste, Chopped" },
-  { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne" },
-  { name: "Green Chilli", type: "Spice", desc: "Stemless, Chopped" },
-  { name: "Lemon", type: "Citrus", desc: "Whole, Juice" },
-  { name: "Coriander", type: "Herb", desc: "Cleaned, Chopped" },
-  { name: "Mint", type: "Herb", desc: "Cleaned, Plucked" },
-  { name: "Curry Leaves", type: "Herb", desc: "Cleaned, Plucked" },
-  { name: "Coconut", type: "Fruit", desc: "Grated, Sliced, Whole" },
+  { name: "Onion", type: "Root", desc: "Peeled, Sliced, Diced", image: "/images/vegetables/choppedonion.jpg" },
+  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/images/vegetables/vegetablecutting1.jpg" },
+  { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced", image: "/images/vegetables/vegetablecutting2.jpg" },
+  { name: "Ginger", type: "Root", desc: "Peeled, Paste, Julienne", image: "/images/vegetables/vegetablecutting3.jpg" },
+  { name: "Garlic", type: "Bulb", desc: "Peeled, Paste, Chopped", image: "/images/vegetables/vegetablecutting4.jpg" },
+  { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne", image: "/images/vegetables/chopped carrot.jpg" },
+  { name: "Green Chilli", type: "Spice", desc: "Stemless, Chopped", image: "/images/vegetables/vegetablecutting5.jpg" },
+  { name: "Lemon", type: "Citrus", desc: "Whole, Juice", image: "/images/vegetables/vegetablecutting6.jpg" },
+  { name: "Coriander", type: "Herb", desc: "Cleaned, Chopped", image: "/images/vegetables/vegetablecutting7.jpg" },
+  { name: "Mint", type: "Herb", desc: "Cleaned, Plucked", image: "/images/vegetables/vegetablecutting1.jpg" },
+  { name: "Curry Leaves", type: "Herb", desc: "Cleaned, Plucked", image: "/images/vegetables/vegetablecutting2.jpg" },
+  { name: "Coconut", type: "Fruit", desc: "Grated, Sliced, Whole", image: "/images/vegetables/vegetablecutting3.jpg" },
 ];
 
 const cuts = [
@@ -113,21 +113,28 @@ export default function Products() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {vegetables.map((veg, index) => (
               <FadeIn key={index} delay={index * 0.05}>
-                <div className="bg-white border border-gray-100 rounded-xl p-6 hover:border-green-500 hover:shadow-md transition-all duration-300 group">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors">
-                      <Leaf className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
-                      {veg.type}
-                    </span>
+                <div className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-green-500 hover:shadow-md transition-all duration-300 group h-full flex flex-col">
+                  <div className="relative h-48 w-full bg-gray-100">
+                    <Image
+                      src={veg.image}
+                      alt={veg.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{veg.name}</h4>
-                  <p className="text-sm text-gray-500 mb-4">{veg.desc}</p>
-                  <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
-                    <span className="text-xs text-gray-400">Daily Fresh</span>
-                    <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-green-500 group-hover:text-white transition-colors">
-                      <Check className="w-3 h-3" />
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex justify-between items-start mb-4">
+                      <h4 className="text-lg font-bold text-gray-900">{veg.name}</h4>
+                      <span className="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                        {veg.type}
+                      </span>
+                    </div>
+                    <p className="text-sm text-gray-500 mb-4 flex-1">{veg.desc}</p>
+                    <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
+                      <span className="text-xs text-gray-400">Daily Fresh</span>
+                      <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <Check className="w-3 h-3" />
+                      </div>
                     </div>
                   </div>
                 </div>

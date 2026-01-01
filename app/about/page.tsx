@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Target, Award, Users } from "lucide-react";
+import { Target, Award, Users, ArrowRight } from "lucide-react";
 import FadeIn from "../components/FadeIn";
 import { motion } from "framer-motion";
 
@@ -72,37 +72,73 @@ export default function About() {
           </div>
         </section>
 
-        {/* Vision & Mission */}
+        {/* Vision & Mission - Redesigned */}
         <section id="vision" className="scroll-mt-24">
-          <div className="grid md:grid-cols-2 gap-8">
-            <FadeIn delay={0.2} direction="right">
-              <motion.div 
-                whileHover={{ y: -10 }}
-                className="bg-green-50 p-10 rounded-3xl border border-green-100 hover:shadow-lg transition-all h-full"
-              >
-                <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6">
-                  <Target className="w-8 h-8" />
+          <div className="relative bg-gray-900 rounded-[3rem] overflow-hidden p-8 md:p-16">
+            <div className="absolute inset-0 opacity-10">
+              <Image 
+                src="/images/vegetables/vegetablecutting3.jpg" 
+                alt="Background" 
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+              <FadeIn direction="right">
+                <div className="space-y-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white">Driving the Future of Food Supply</h2>
+                  <p className="text-gray-400 text-lg">
+                    We are not just selling vegetables; we are building an infrastructure that empowers kitchens to be more efficient, sustainable, and profitable.
+                  </p>
+                  <div className="flex gap-4">
+                    <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white font-bold">01</div>
+                    <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">02</div>
+                    <div className="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold">03</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  To serve fresh, clean, cut, hygienic ready to cook vegetables to individuals & businesses, setting a new standard for food safety and convenience.
-                </p>
-              </motion.div>
-            </FadeIn>
-            <FadeIn delay={0.4} direction="left">
-              <motion.div 
-                whileHover={{ y: -10 }}
-                className="bg-blue-50 p-10 rounded-3xl border border-blue-100 hover:shadow-lg transition-all h-full"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                  <Award className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  To reform the vegetables market by creating a sustainable ecosystem that benefits farmers, businesses, and consumers alike.
-                </p>
-              </motion.div>
-            </FadeIn>
+              </FadeIn>
+
+              <div className="space-y-6">
+                <FadeIn delay={0.2} direction="left">
+                  <motion.div 
+                    whileHover={{ x: 10 }}
+                    className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/20 transition-colors"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="bg-green-500 p-3 rounded-xl text-white">
+                        <Target className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2">Our Vision</h3>
+                        <p className="text-gray-300 leading-relaxed">
+                          To serve fresh, clean, cut, hygienic ready-to-cook vegetables to individuals & businesses, setting a global standard for food safety and convenience.
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </FadeIn>
+
+                <FadeIn delay={0.4} direction="left">
+                  <motion.div 
+                    whileHover={{ x: 10 }}
+                    className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/20 transition-colors"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="bg-blue-500 p-3 rounded-xl text-white">
+                        <Award className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white mb-2">Our Mission</h3>
+                        <p className="text-gray-300 leading-relaxed">
+                          To reform the vegetables market by creating a sustainable ecosystem that benefits farmers, businesses, and consumers alike through technology and innovation.
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </FadeIn>
+              </div>
+            </div>
           </div>
         </section>
 

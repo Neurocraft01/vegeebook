@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, Leaf, Trash2, ShieldCheck, Zap, ArrowRight } from "lucide-react";
 import FadeIn from "./components/FadeIn";
-import { motion } from "framer-motion";
+import { motion, useSpring, useTransform, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
   return (
@@ -12,24 +13,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/vegetables/vegetablecutting1.jpg" 
-            alt="Fresh vegetables processing" 
-            fill
-            className="object-cover"
-            priority
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/hero_background.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn delay={0.2} direction="down">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 backdrop-blur-md mb-8">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-              <span className="text-green-100 text-sm font-medium tracking-wide uppercase">Trusted by 50+ Kitchens</span>
-            </div>
-          </FadeIn>
-          
           <FadeIn delay={0.4}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-white leading-tight">
               Kitchen Ready <br />
@@ -75,10 +71,10 @@ export default function Home() {
       <section className="py-10 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
-            <StatItem number="500+" label="Daily Orders" delay={0.2} />
-            <StatItem number="100%" label="Hygienic" delay={0.4} />
-            <StatItem number="0%" label="Wastage" delay={0.6} />
-            <StatItem number="24/7" label="Support" delay={0.8} />
+            <StatItem value={500} suffix="+" label="Daily Orders" delay={0.2} />
+            <StatItem value={100} suffix="%" label="Hygienic" delay={0.4} />
+            <StatItem value={1000} suffix="+" label="5 Star Ratings" delay={0.6} />
+            <StatItem value={24} suffix="/7" label="Support" delay={0.8} />
           </div>
         </div>
       </section>
@@ -183,12 +179,15 @@ export default function Home() {
       {/* CTA */}
       <section className="py-24 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <Image 
-            src="/images/vegetables/vegetablecutting6.jpg" 
-            alt="Background" 
-            fill
-            className="object-cover"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/cta_background.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <FadeIn direction="up">
@@ -210,11 +209,25 @@ export default function Home() {
   );
 }
 
-function StatItem({ number, label, delay }: { number: string, label: string, delay: number }) {
+function StatItem({ value, suffix, label, delay }: { value: number, suffix: string, label: string, delay: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const spring = useSpring(0, { mass: 0.8, stiffness: 75, damping: 15 });
+  const display = useTransform(spring, (current) => Math.round(current));
+
+  useEffect(() => {
+    if (isInView) {
+      spring.set(value);
+    }
+  }, [isInView, value, spring]);
+
   return (
     <FadeIn delay={delay} direction="up">
-      <div>
-        <p className="text-4xl font-bold text-green-600">{number}</p>
+      <div ref={ref}>
+        <p className="text-4xl font-bold text-green-600 flex justify-center items-center">
+          <motion.span>{display}</motion.span>
+          <span>{suffix}</span>
+        </p>
         <p className="text-gray-500 text-sm mt-1 uppercase tracking-wider">{label}</p>
       </div>
     </FadeIn>
