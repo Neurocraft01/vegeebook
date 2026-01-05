@@ -13,7 +13,7 @@ export default function Services() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/vegetables/vegetablecutting5.jpg" 
+            src="/vegetables/vegetablecutting5.jpg" 
             alt="Services Hero" 
             fill
             className="object-cover"
@@ -93,7 +93,7 @@ export default function Services() {
             <FadeIn direction="right">
               <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
                 <Image 
-                  src="/images/vegetables/vegetablecutting3.jpg" 
+                  src="/vegetables/vegetablecutting3.jpg" 
                   alt="Farm Sourcing" 
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -126,7 +126,7 @@ export default function Services() {
               <FadeIn direction="left">
                 <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
                   <Image 
-                    src="/images/vegetables/vegetablecutting4.jpg" 
+                    src="/vegetables/vegetablecutting4.jpg" 
                     alt="Hygienic Processing" 
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -161,7 +161,7 @@ export default function Services() {
             <FadeIn direction="right">
               <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl group">
                 <Image 
-                  src="/images/vegetables/vegetablecutting6.jpg" 
+                  src="/vegetables/vegetablecutting6.jpg" 
                   alt="Logistics" 
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"

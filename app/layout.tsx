@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Loader from "./components/Loader";
 import FloatingContact from "./components/FloatingContact";
 
 const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
@@ -27,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${font.className} bg-gray-50 text-gray-900 antialiased`}>
-        <Loader />
         <div className="flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-grow">{children}</main>

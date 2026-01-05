@@ -7,25 +7,25 @@ import { Check, ArrowRight, Leaf, ChefHat, Package } from "lucide-react";
 import Link from "next/link";
 
 const vegetables = [
-  { name: "Onion", type: "Root", desc: "Peeled, Sliced, Diced", image: "/images/vegetables/choppedonion.jpg" },
-  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/images/vegetables/vegetablecutting1.jpg" },
-  { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced", image: "/images/vegetables/vegetablecutting2.jpg" },
-  { name: "Ginger", type: "Root", desc: "Peeled, Paste, Julienne", image: "/images/vegetables/vegetablecutting3.jpg" },
-  { name: "Garlic", type: "Bulb", desc: "Peeled, Paste, Chopped", image: "/images/vegetables/vegetablecutting4.jpg" },
-  { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne", image: "/images/vegetables/chopped carrot.jpg" },
-  { name: "Green Chilli", type: "Spice", desc: "Stemless, Chopped", image: "/images/vegetables/vegetablecutting5.jpg" },
-  { name: "Lemon", type: "Citrus", desc: "Whole, Juice", image: "/images/vegetables/vegetablecutting6.jpg" },
-  { name: "Coriander", type: "Herb", desc: "Cleaned, Chopped", image: "/images/vegetables/vegetablecutting7.jpg" },
-  { name: "Mint", type: "Herb", desc: "Cleaned, Plucked", image: "/images/vegetables/vegetablecutting1.jpg" },
-  { name: "Curry Leaves", type: "Herb", desc: "Cleaned, Plucked", image: "/images/vegetables/vegetablecutting2.jpg" },
-  { name: "Coconut", type: "Fruit", desc: "Grated, Sliced, Whole", image: "/images/vegetables/vegetablecutting3.jpg" },
+  { name: "Onion", type: "Root", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
+  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
+  { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg" },
+  { name: "Ginger", type: "Root", desc: "Peeled, Paste, Julienne", image: "/product/ginger.jpg" },
+  { name: "Garlic", type: "Bulb", desc: "Peeled, Paste, Chopped", image: "/product/garlic.jpg" },
+  { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg" },
+  { name: "Green Chilli", type: "Spice", desc: "Stemless, Chopped", image: "/product/green chilli.jpg" },
+  { name: "Lemon", type: "Citrus", desc: "Whole, Juice", image: "/product/lemon.jpg" },
+  { name: "Coriander", type: "Herb", desc: "Cleaned, Chopped", image: "/product/coriander.jpg" },
+  { name: "Mint", type: "Herb", desc: "Cleaned, Plucked", image: "/product/mint.jpg" },
+  { name: "Curry Leaves", type: "Herb", desc: "Cleaned, Plucked", image: "/product/curry leaves.jpg" },
+  { name: "Coconut", type: "Fruit", desc: "Grated, Sliced, Whole", image: "/product/coconut.jpg" },
 ];
 
 const cuts = [
-  { title: "Diced / Cubed", desc: "Perfect uniform cubes for curries and stews.", image: "/images/vegetables/chopped carrot.jpg" },
-  { title: "Sliced / Rings", desc: "Consistent thickness for salads and frying.", image: "/images/vegetables/choppedonion.jpg" },
-  { title: "Julienne", desc: "Fine strips for stir-fries and garnishing.", image: "/images/vegetables/vegetablecutting2.jpg" },
-  { title: "Paste / Puree", desc: "Smooth blends for bases and marinades.", image: "/images/vegetables/vegetablecutting7.jpg" },
+  { title: "Diced / Cubed", desc: "Perfect uniform cubes for curries and stews.", image: "/product/diced cube.jpg" },
+  { title: "Sliced / Rings", desc: "Consistent thickness for salads and frying.", image: "/product/Sliced  Rings vegetables.jpg" },
+  { title: "Julienne", desc: "Fine strips for stir-fries and garnishing.", image: "/product/Julienne.jpg" },
+  { title: "Paste / Puree", desc: "Smooth blends for bases and marinades.", image: "/product/Paste Puree vegetables.jpg" },
 ];
 
 export default function Products() {
@@ -35,7 +35,7 @@ export default function Products() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-green-900">
         <div className="absolute inset-0 opacity-40">
           <Image 
-            src="/images/vegetables/vegetablecutting1.jpg" 
+            src="/vegetables/vegetablecutting1.jpg" 
             alt="Fresh Produce" 
             fill
             className="object-cover"
@@ -131,7 +131,10 @@ export default function Products() {
                     </div>
                     <p className="text-sm text-gray-500 mb-4 flex-1">{veg.desc}</p>
                     <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
-                      <span className="text-xs text-gray-400">Daily Fresh</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs text-gray-400">Daily Fresh</span>
+                        <span className="text-xs font-bold text-green-600 mt-0.5">Min. 5kg</span>
+                      </div>
                       <div className="w-6 h-6 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-green-500 group-hover:text-white transition-colors">
                         <Check className="w-3 h-3" />
                       </div>

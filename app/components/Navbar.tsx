@@ -33,13 +33,13 @@ export default function Navbar() {
             <Link href="/" className="flex-shrink-0 flex items-center gap-2">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="relative w-20 h-20 overflow-hidden"
+                className="relative w-24 h-24 overflow-hidden rounded-3xl"
               >
                  <Image 
-                   src="/images/logo.jpeg" 
+                   src="/logo.png" 
                    alt="Vegeebook Logo" 
                    fill
-                   className="object-contain"
+                   className="object-contain mix-blend-multiply"
                  />
               </motion.div>
               <span className={`text-2xl font-bold tracking-tight ${scrolled ? "text-gray-900" : "text-white"}`}>

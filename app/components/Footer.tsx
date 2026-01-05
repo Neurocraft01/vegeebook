@@ -1,7 +1,8 @@
 "use client";
 
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Package } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -12,7 +13,15 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight">Vegeebook Solutions</h2>
+            <div className="relative w-24 h-24 overflow-hidden rounded-3xl bg-white">
+              <Image 
+                src="/logo.jpeg" 
+                alt="Vegeebook Logo" 
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h2 className="text-2xl font-bold tracking-tight">Vegeebook</h2>
             <p className="text-green-100 text-sm leading-relaxed">
               Revolutionizing the vegetable supply chain with technology, transparency, and trust. Connecting farmers directly to businesses.
             </p>
@@ -63,16 +72,25 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-green-100 text-sm">info@vegeebooksolutions.com</span>
+                <span className="text-green-100 text-sm">info@vegeebooks.com</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Package className="w-5 h-5 text-green-400 flex-shrink-0" />
+                <span className="text-green-100 text-sm">Minimum qty - 5kg</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-green-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-green-200 text-sm">
-            © {new Date().getFullYear()} Vegeebook Solutions. All rights reserved.
+          <p className="text-green-200 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Vegeebook. All rights reserved.
           </p>
+          
+          <p className="text-green-200 text-xs text-center">
+            Designed and Developed by <a href="https://aksautomations.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-semibold">AKS AUTOMATIONS</a>
+          </p>
+
           <div className="flex space-x-6">
             <Link href="#" className="text-green-200 hover:text-white text-sm transition-colors">Privacy Policy</Link>
             <Link href="#" className="text-green-200 hover:text-white text-sm transition-colors">Terms of Service</Link>

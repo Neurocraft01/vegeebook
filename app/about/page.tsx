@@ -12,7 +12,7 @@ export default function About() {
       <div className="relative bg-gray-900 py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-30">
           <Image 
-            src="/images/vegetables/vegetablecutting7.jpg" 
+            src="/vegetables/vegetablecutting7.jpg" 
             alt="About Header" 
             fill
             className="object-cover"
@@ -41,7 +41,7 @@ export default function About() {
                   className="relative rounded-2xl overflow-hidden shadow-xl transition-all duration-500"
                 >
                   <Image 
-                    src="/images/vegetables/vegetablecutting1.jpg" 
+                    src="/vegetables/vegetablecutting1.jpg" 
                     alt="Our Story" 
                     width={800} 
                     height={600}
@@ -77,7 +77,7 @@ export default function About() {
           <div className="relative bg-gray-900 rounded-[3rem] overflow-hidden p-8 md:p-16">
             <div className="absolute inset-0 opacity-10">
               <Image 
-                src="/images/vegetables/vegetablecutting3.jpg" 
+                src="/vegetables/vegetablecutting3.jpg" 
                 alt="Background" 
                 fill
                 className="object-cover"
@@ -153,25 +153,25 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <TeamMember 
               name="Keshav Hissal" 
-              role="Founder & CEO" 
+              role="Founder & Chief Executive Officer" 
               image="/images/team/team_keshav hissal.jpeg"
               delay={0.2}
             />
             <TeamMember 
               name="Sheikh Jabir" 
-              role="COO" 
+              role=" Chief Operating Officer" 
               image="/images/team/team_Shekh Jabir.jpeg"
               delay={0.4}
             />
             <TeamMember 
               name="Prahlad Damdhar" 
-              role="CMO" 
+              role="Chief Marketing Officer" 
               image="/images/team/team_prahlad damdhar.jpeg"
               delay={0.6}
             />
             <TeamMember 
               name="Priya Puri" 
-              role="CSO" 
+              role="Chief Strategy Officer" 
               image="/images/team/team_priya puri.jpeg"
               delay={0.8}
             />

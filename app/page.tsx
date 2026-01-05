@@ -92,7 +92,7 @@ export default function Home() {
                   className="relative rounded-2xl overflow-hidden shadow-2xl rotate-2 transition-all duration-500"
                 >
                   <Image 
-                    src="/images/vegetables/vegetablecutting2.jpg" 
+                    src="/vegetables/vegetablecutting2.jpg" 
                     alt="Kitchen struggle" 
                     width={600} 
                     height={800} 
@@ -155,21 +155,21 @@ export default function Home() {
               icon={<Leaf className="w-8 h-8" />}
               title="Farm Fresh"
               desc="Sourced directly from farmers for maximum shelf life and flavor."
-              image="/images/vegetables/vegetablecutting3.jpg"
+              image="/vegetables/vegetablecutting3.jpg"
               delay={0.2}
             />
             <FeatureCard 
               icon={<ShieldCheck className="w-8 h-8" />}
               title="100% Hygienic"
               desc="Washed in ozonized water and processed in a sterile facility."
-              image="/images/vegetables/vegetablecutting4.jpg"
+              image="/vegetables/vegetablecutting4.jpg"
               delay={0.4}
             />
             <FeatureCard 
               icon={<Zap className="w-8 h-8" />}
               title="Ready to Cook"
               desc="Precision cuts that go straight from the pack to the pan."
-              image="/images/vegetables/vegetablecutting5.jpg"
+              image="/vegetables/vegetablecutting5.jpg"
               delay={0.6}
             />
           </div>

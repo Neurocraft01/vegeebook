@@ -1,11 +1,14 @@
 "use client";
 
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import FadeIn from "../components/FadeIn";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,13 +16,56 @@ export default function Contact() {
     organization: "",
     phone: "",
     inquiryType: "",
+    vegetableType: "",
+    weight: "",
     message: "",
     agreed: false
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your inquiry! We will contact you shortly.");
+    setIsSubmitting(true);
+
+    // Replace these with your actual EmailJS service ID, template ID, and public key
+    const serviceId = "YOUR_SERVICE_ID";
+    const templateId = "YOUR_TEMPLATE_ID";
+    const publicKey = "YOUR_PUBLIC_KEY";
+
+    // Create a template parameters object that matches your EmailJS template variables
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      phone: formData.phone,
+      organization: formData.organization,
+      inquiry_type: formData.inquiryType,
+      vegetable_type: formData.vegetableType,
+      weight_required: formData.weight,
+      message: formData.message,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((result) => {
+        alert("Thank you for your inquiry! We will contact you shortly.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          organization: "",
+          phone: "",
+          inquiryType: "",
+          vegetableType: "",
+          weight: "",
+          message: "",
+          agreed: false
+        });
+        if (form.current) form.current.reset();
+      }, (error) => {
+        console.error(error.text);
+        alert("Failed to send message. Please try again later or contact us directly.");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -69,7 +115,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Email Us</h4>
-                    <p className="text-gray-600 text-sm">info@vegeebooksolutions.com</p>
+                    <p className="text-gray-600 text-sm">info@vegeebooks.com</p>
                   </div>
                 </div>
 
@@ -80,6 +126,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">Call Us</h4>
                     <p className="text-gray-600 text-sm">+91 9226593412</p>
+                    <p className="text-gray-600 text-sm mt-1">Minimum qty - 5kg</p>
                   </div>
                 </div>
               </div>
@@ -93,7 +140,7 @@ export default function Contact() {
 
             {/* Form */}
             <div className="lg:w-2/3 p-10">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <InputGroup label="First Name" name="firstName" onChange={handleChange} />
                   <InputGroup label="Last Name" name="lastName" onChange={handleChange} />
@@ -102,6 +149,11 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <InputGroup label="Email" name="email" type="email" onChange={handleChange} />
                   <InputGroup label="Phone" name="phone" type="tel" onChange={handleChange} />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <InputGroup label="Vegetable Type" name="vegetableType" onChange={handleChange} />
+                  <InputGroup label="Weight Required (kg)" name="weight" onChange={handleChange} />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -156,10 +208,11 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-500/20 flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className={`w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-green-500/20 flex items-center justify-center gap-2 ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`}
                 >
                   <Send className="w-5 h-5" />
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </motion.button>
               </form>
             </div>
