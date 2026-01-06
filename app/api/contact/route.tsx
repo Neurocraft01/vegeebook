@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Vegeebook <onboarding@resend.dev>',
-      reply_to: email, // Set the "Reply-To" to the person who filled out the form
+      replyTo: email, // Set the "Reply-To" to the person who filled out the form
       to: [toEmail],
       subject: `Vegeebook Inquiry: ${firstName} ${lastName}`, // Simplified subject
       html: htmlContent,
