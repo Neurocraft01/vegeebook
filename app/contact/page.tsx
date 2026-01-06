@@ -4,7 +4,6 @@ import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState, useRef } from "react";
 import FadeIn from "../components/FadeIn";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -22,29 +21,29 @@ export default function Contact() {
     agreed: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Replace these with your actual EmailJS service ID, template ID, and public key
-    const serviceId = "YOUR_SERVICE_ID";
-    const templateId = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Create a template parameters object that matches your EmailJS template variables
-    const templateParams = {
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
-      phone: formData.phone,
-      organization: formData.organization,
-      inquiry_type: formData.inquiryType,
-      vegetable_type: formData.vegetableType,
-      weight_required: formData.weight,
-      message: formData.message,
-    };
+      const data = await response.text();
+      let jsonData;
+      try {
+        jsonData = JSON.parse(data);
+      } catch (e) {
+        // If parsing fails, it might be a raw error or HTML, process accordingly
+        if (!response.ok) throw new Error(data || "Failed to send message");
+      }
 
-    emailjs.send(serviceId, templateId, templateParams, publicKey)
-      .then((result) => {
+      if (response.ok && (!jsonData || !jsonData.error)) {
         alert("Thank you for your inquiry! We will contact you shortly.");
         setFormData({
           firstName: "",
@@ -59,13 +58,15 @@ export default function Contact() {
           agreed: false
         });
         if (form.current) form.current.reset();
-      }, (error) => {
-        console.error(error.text);
-        alert("Failed to send message. Please try again later or contact us directly.");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+      } else {
+        throw new Error(jsonData?.error?.message || jsonData?.error || "Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again later or contact us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
