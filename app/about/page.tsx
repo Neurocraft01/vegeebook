@@ -158,7 +158,7 @@ export default function About() {
               delay={0.2}
             />
             <TeamMember 
-              name="Sheikh Jabir" 
+              name="Shekh Jabir" 
               role=" Chief Operating Officer" 
               image="/images/team/team_Shekh Jabir.jpeg"
               delay={0.4}

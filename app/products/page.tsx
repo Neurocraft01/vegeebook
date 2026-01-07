@@ -7,18 +7,22 @@ import { Check, ArrowRight, Leaf, ChefHat, Package } from "lucide-react";
 import Link from "next/link";
 
 const vegetables = [
-  { name: "Onion", type: "Root", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
-  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
+  { name: "Methi", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/methi.jpg" },
+  { name: "Palak", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/palak.jpg" },
   { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg" },
-  { name: "Ginger", type: "Root", desc: "Peeled, Paste, Julienne", image: "/product/ginger.jpg" },
-  { name: "Garlic", type: "Bulb", desc: "Peeled, Paste, Chopped", image: "/product/garlic.jpg" },
+  { name: "Mirchi", type: "Spice", desc: "Stemless, Chopped", image: "/product/mirchi.jpeg" },
+  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
+  { name: "Brinjal", type: "Fruit", desc: "Whole, Diced", image: "/product/brinjal.jpeg" },
+  { name: "Sponge Gourd", type: "Gourd", desc: "Fresh, Cut", image: "/product/sponge gourd.jpg" },
+  { name: "Bhendi", type: "Pod", desc: "Fresh, Cut", image: "/product/bhendi.jpg" },
+  { name: "Couli Flower", type: "Flower", desc: "Florets, Cleaned", image: "/product/couli flower.jpg" },
+  { name: "Gavar", type: "Legume", desc: "Fresh, Cleaned", image: "/product/gavar.jpg" },
+  { name: "Cabbage", type: "Leafy", desc: "Shredded, Whole", image: "/product/cabbage.jpg" },
   { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg" },
-  { name: "Green Chilli", type: "Spice", desc: "Stemless, Chopped", image: "/product/green chilli.jpg" },
-  { name: "Lemon", type: "Citrus", desc: "Whole, Juice", image: "/product/lemon.jpg" },
-  { name: "Coriander", type: "Herb", desc: "Cleaned, Chopped", image: "/product/coriander.jpg" },
-  { name: "Mint", type: "Herb", desc: "Cleaned, Plucked", image: "/product/mint.jpg" },
-  { name: "Curry Leaves", type: "Herb", desc: "Cleaned, Plucked", image: "/product/curry leaves.jpg" },
-  { name: "Coconut", type: "Fruit", desc: "Grated, Sliced, Whole", image: "/product/coconut.jpg" },
+  { name: "Kukumber Green", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg" },
+  { name: "Onion", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
+  { name: "Pumpkin", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg" },
+  { name: "Beetroot", type: "Root", desc: "Peeled, Diced", image: "/product/beetroot.png" },
 ];
 
 const cuts = [
@@ -26,6 +30,8 @@ const cuts = [
   { title: "Sliced / Rings", desc: "Consistent thickness for salads and frying.", image: "/product/Sliced  Rings vegetables.jpg" },
   { title: "Julienne", desc: "Fine strips for stir-fries and garnishing.", image: "/product/Julienne.jpg" },
   { title: "Paste / Puree", desc: "Smooth blends for bases and marinades.", image: "/product/Paste Puree vegetables.jpg" },
+  { title: "Chopped", desc: "Uniformly chopped for bases and garnishes.", image: "/product/chopped.jpeg" },
+  { title: "Mincing", desc: "Finely minced ingredients for rich flavor.", image: "/product/mincing.jpeg" },
 ];
 
 export default function Products() {
@@ -65,7 +71,7 @@ export default function Products() {
             </FadeIn>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {cuts.map((cut, index) => (
               <FadeIn key={index} delay={index * 0.1}>
                 <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
@@ -190,6 +196,42 @@ export default function Products() {
                 </div>
               </FadeIn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Benefits */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <FadeIn>
+              <h2 className="text-green-600 font-bold tracking-wide uppercase text-sm mb-3">Why Choose Us</h2>
+              <h3 className="text-4xl font-bold text-gray-900">Customer Benefits</h3>
+            </FadeIn>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              "Clean", 
+              "Freshly Cut Vegetables", 
+              "Zero Waste", 
+              "Customized Cuts",
+              "Food Grade Packaging", 
+              "Doorstep Delivery", 
+              "Online Booking, Hygienic", 
+              "Highly Convenient"
+            ].map((benefit, index) => (
+              <FadeIn key={index} delay={index * 0.1}>
+                <div className="bg-green-50 p-6 rounded-2xl text-center hover:bg-green-100 transition-colors h-full flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-green-600 shadow-sm">
+                      <Check className="w-6 h-6" />
+                    </div>
+                    <span className="font-semibold text-gray-800">{benefit}</span>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>

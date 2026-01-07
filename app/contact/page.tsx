@@ -17,6 +17,7 @@ export default function Contact() {
     inquiryType: "",
     vegetableType: "",
     weight: "",
+    deliveryAddress: "",
     message: "",
     agreed: false
   });
@@ -54,6 +55,7 @@ export default function Contact() {
           inquiryType: "",
           vegetableType: "",
           weight: "",
+          deliveryAddress: "",
           message: "",
           agreed: false
         });
@@ -153,8 +155,47 @@ export default function Contact() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <InputGroup label="Vegetable Type" name="vegetableType" onChange={handleChange} />
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Vegetable Type</label>
+                    <motion.select
+                      whileFocus={{ scale: 1.01 }}
+                      name="vegetableType"
+                      required
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-gray-50"
+                      onChange={handleChange}
+                    >
+                      <option value="">Select Vegetable</option>
+                      <option value="Methi">Methi</option>
+                      <option value="Palak">Palak</option>
+                      <option value="Tomato">Tomato</option>
+                      <option value="Mirchi">Mirchi</option>
+                      <option value="Potato">Potato</option>
+                      <option value="Brinjal">Brinjal</option>
+                      <option value="Sponge Gourd">Sponge Gourd</option>
+                      <option value="Bhendi">Bhendi</option>
+                      <option value="Couli Flower">Couli Flower</option>
+                      <option value="Gavar">Gavar</option>
+                      <option value="Cabbage">Cabbage</option>
+                      <option value="Carrot">Carrot</option>
+                      <option value="Kukumber Green">Kukumber Green</option>
+                      <option value="Onion">Onion</option>
+                      <option value="Pumpkin">Pumpkin</option>
+                      <option value="Beetroot">Beetroot</option>
+                    </motion.select>
+                  </div>
                   <InputGroup label="Weight Required (kg)" name="weight" onChange={handleChange} />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Delivery Address</label>
+                  <motion.textarea
+                    whileFocus={{ scale: 1.01 }}
+                    name="deliveryAddress"
+                    rows={2}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-gray-50 resize-none"
+                    onChange={handleChange}
+                    placeholder="Enter your delivery location..."
+                  ></motion.textarea>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
