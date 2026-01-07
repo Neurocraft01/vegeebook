@@ -22,7 +22,7 @@ const vegetables = [
   { name: "Kukumber Green", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg" },
   { name: "Onion", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
   { name: "Pumpkin", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg" },
-  { name: "Beetroot", type: "Root", desc: "Peeled, Diced", image: "/product/beetroot.png" },
+  { name: "Beetroot", type: "Root", desc: "Peeled, Diced", image: "/product/Beetroot.png" },
 ];
 
 const cuts = [
@@ -50,7 +50,7 @@ export default function Products() {
         </div>
         <div className="relative z-10 text-center px-4">
           <FadeIn direction="down">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Premium Produce</h1>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Premium Products</h1>
             <p className="text-xl text-green-100 max-w-2xl mx-auto">
               Freshly sourced, hygienically processed, and ready for your kitchen.
             </p>

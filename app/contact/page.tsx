@@ -136,8 +136,8 @@ export default function Contact() {
 
               <div className="mt-12 p-6 bg-green-900 rounded-2xl text-white">
                 <h4 className="font-bold mb-2">Business Hours</h4>
-                <p className="text-sm text-green-100 mb-1">Mon - Sat: 9:00 AM - 8:00 PM</p>
-                <p className="text-sm text-green-100">Sunday: Closed</p>
+                <p className="text-sm text-green-100 mb-1">Mon - Sun: 9:00 AM - 10:00 PM</p>
+                {/* <p className="text-sm text-green-100">Sunday: Closed</p> */}
               </div>
             </div>
 
