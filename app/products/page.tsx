@@ -215,13 +215,13 @@ export default function Products() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              "Clean", 
+              "Clean & Hygienic", 
               "Freshly Cut Vegetables", 
               "Zero Waste", 
               "Customized Cuts",
               "Food Grade Packaging", 
               "Doorstep Delivery", 
-              "Online Booking, Hygienic", 
+              "Online Booking", 
               "Highly Convenient"
             ].map((benefit, index) => (
               <FadeIn key={index} delay={index * 0.1}>
