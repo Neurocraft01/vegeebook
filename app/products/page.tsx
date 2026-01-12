@@ -7,22 +7,22 @@ import { Check, ArrowRight, Leaf, ChefHat, Package } from "lucide-react";
 import Link from "next/link";
 
 const vegetables = [
-  { name: "Methi", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/methi.jpg" },
-  { name: "Palak", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/palak.jpg" },
-  { name: "Tomato", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg" },
-  { name: "Mirchi", type: "Spice", desc: "Stemless, Chopped", image: "/product/mirchi.jpeg" },
-  { name: "Potato", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
-  { name: "Brinjal", type: "Fruit", desc: "Whole, Diced", image: "/product/brinjal.jpeg" },
-  { name: "Sponge Gourd", type: "Gourd", desc: "Fresh, Cut", image: "/product/sponge gourd.jpg" },
-  { name: "Bhendi", type: "Pod", desc: "Fresh, Cut", image: "/product/bhendi.jpg" },
-  { name: "Couli Flower", type: "Flower", desc: "Florets, Cleaned", image: "/product/couli flower.jpg" },
-  { name: "Gavar", type: "Legume", desc: "Fresh, Cleaned", image: "/product/gavar.jpg" },
-  { name: "Cabbage", type: "Leafy", desc: "Shredded, Whole", image: "/product/cabbage.jpg" },
-  { name: "Carrot", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg" },
-  { name: "Kukumber Green", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg" },
-  { name: "Onion", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
-  { name: "Pumpkin", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg" },
-  { name: "Beetroot", type: "Root", desc: "Peeled, Diced", image: "/product/Beetroot.png" },
+  { name: "Methi", hindiName: "मेथी", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/methi.jpg" },
+  { name: "Palak", hindiName: "पालक", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/palak.jpg" },
+  { name: "Tomato", hindiName: "टमाटर", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg" },
+  { name: "Mirchi", hindiName: "मिर्ची", type: "Spice", desc: "Stemless, Chopped", image: "/product/mirchi.jpeg" },
+  { name: "Potato", hindiName: "आलू", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
+  { name: "Brinjal", hindiName: "बैंगन", type: "Fruit", desc: "Whole, Diced", image: "/product/brinjal.jpeg" },
+  { name: "Sponge Gourd", hindiName: "तोरई", type: "Gourd", desc: "Fresh, Cut", image: "/product/sponge gourd.jpg" },
+  { name: "Bhendi", hindiName: "भिंडी", type: "Pod", desc: "Fresh, Cut", image: "/product/bhendi.jpg" },
+  { name: "Couli Flower", hindiName: "फूलगोभी", type: "Flower", desc: "Florets, Cleaned", image: "/product/couli flower.jpg" },
+  { name: "Gavar", hindiName: "गवार", type: "Legume", desc: "Fresh, Cleaned", image: "/product/gavar.jpg" },
+  { name: "Cabbage", hindiName: "पत्ता गोभी", type: "Leafy", desc: "Shredded, Whole", image: "/product/cabbage.jpg" },
+  { name: "Carrot", hindiName: "गाजर", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg" },
+  { name: "Kukumber Green", hindiName: "खीरा", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg" },
+  { name: "Onion", hindiName: "प्याज", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
+  { name: "Pumpkin", hindiName: "कद्दू", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg" },
+  { name: "Beetroot", hindiName: "चुकंदर", type: "Root", desc: "Peeled, Diced", image: "/product/Beetroot.png" },
 ];
 
 const cuts = [
@@ -130,7 +130,10 @@ export default function Products() {
                   </div>
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex justify-between items-start mb-4">
-                      <h4 className="text-lg font-bold text-gray-900">{veg.name}</h4>
+                      <div>
+                        <h4 className="text-lg font-bold text-gray-900">{veg.name}</h4>
+                        <p className="text-lg text-green-600 font-bold">{veg.hindiName}</p>
+                      </div>
                       <span className="text-xs font-semibold bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
                         {veg.type}
                       </span>

@@ -29,7 +29,7 @@ const KNOWLEDGE_BASE = [
   },
   {
     keywords: ["contact", "phone", "email", "call", "whatsapp"],
-    answer: "You can reach us at +91 98765 43210 or email us at contact@vegeebook.com. You can also use the WhatsApp or Call buttons on this screen!"
+    answer: "You can reach us at +91 92265 93412 or email us at info@vegeebooks.com. You can also use the WhatsApp or Call buttons on this screen!"
   },
   {
     keywords: ["product", "vegetable", "menu", "list", "available"],

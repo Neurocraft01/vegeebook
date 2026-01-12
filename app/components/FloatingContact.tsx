@@ -15,7 +15,7 @@ export default function FloatingContact() {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
         {/* WhatsApp Button */}
         <motion.a
-          href="https://wa.me/919876543210" // Replace with actual number
+          href="https://wa.me/919226593412" // Replace with actual number
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
@@ -28,7 +28,7 @@ export default function FloatingContact() {
 
         {/* Call Button */}
         <motion.a
-          href="tel:+919876543210" // Replace with actual number
+          href="tel:+919226593412" // Replace with actual number
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="w-14 h-14 bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-shadow"
