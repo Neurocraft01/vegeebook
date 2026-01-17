@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { firstName, lastName, email, organization, phone, inquiryType, vegetableType, weight, message } = body;
+    const { firstName, lastName, email, organization, phone, inquiryType, vegetableType, otherVegetable, weight, deliveryAddress, message } = body;
 
     // Use a simple HTML string to avoid React rendering issues in the API route
     const htmlContent = `
@@ -22,8 +22,9 @@ export async function POST(request: Request) {
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Organization:</strong> ${organization}</p>
         <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
-        <p><strong>Vegetable Type:</strong> ${vegetableType}</p>
+        <p><strong>Vegetable Type:</strong> ${vegetableType} ${otherVegetable ? `(${otherVegetable})` : ''}</p>
         <p><strong>Weight Required:</strong> ${weight}</p>
+        <p><strong>Delivery Address:</strong> ${deliveryAddress}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       </div>

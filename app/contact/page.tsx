@@ -16,6 +16,7 @@ export default function Contact() {
     phone: "",
     inquiryType: "",
     vegetableType: "",
+    otherVegetable: "",
     weight: "",
     deliveryAddress: "",
     message: "",
@@ -54,6 +55,7 @@ export default function Contact() {
           phone: "",
           inquiryType: "",
           vegetableType: "",
+          otherVegetable: "",
           weight: "",
           deliveryAddress: "",
           message: "",
@@ -156,7 +158,7 @@ export default function Contact() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Vegetable Type</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Vegetable Type (सब्जी का प्रकार)</label>
                     <motion.select
                       whileFocus={{ scale: 1.01 }}
                       name="vegetableType"
@@ -164,24 +166,34 @@ export default function Contact() {
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all bg-gray-50"
                       onChange={handleChange}
                     >
-                      <option value="">Select Vegetable</option>
-                      <option value="Methi">Methi</option>
-                      <option value="Palak">Palak</option>
-                      <option value="Tomato">Tomato</option>
-                      <option value="Mirchi">Mirchi</option>
-                      <option value="Potato">Potato</option>
-                      <option value="Brinjal">Brinjal</option>
-                      <option value="Sponge Gourd">Sponge Gourd</option>
-                      <option value="Bhendi">Bhendi</option>
-                      <option value="Couli Flower">Couli Flower</option>
-                      <option value="Gavar">Gavar</option>
-                      <option value="Cabbage">Cabbage</option>
-                      <option value="Carrot">Carrot</option>
-                      <option value="Kukumber Green">Kukumber Green</option>
-                      <option value="Onion">Onion</option>
-                      <option value="Pumpkin">Pumpkin</option>
-                      <option value="Beetroot">Beetroot</option>
+                      <option value="">Select Vegetable (सब्जी चुनें)</option>
+                      <option value="Methi">Methi (मेथी)</option>
+                      <option value="Palak">Palak (पालक)</option>
+                      <option value="Tomato">Tomato (टमाटर)</option>
+                      <option value="Mirchi">Mirchi (मिर्ची)</option>
+                      <option value="Potato">Potato (आलू)</option>
+                      <option value="Brinjal">Brinjal (बैंगन)</option>
+                      <option value="Sponge Gourd">Sponge Gourd (तोरई)</option>
+                      <option value="Bhendi">Bhendi (भिंडी)</option>
+                      <option value="Couli Flower">Cauliflower (फूलगोभी)</option>
+                      <option value="Gavar">Gavar (ग्वार फली)</option>
+                      <option value="Cabbage">Cabbage (पत्ता गोभी)</option>
+                      <option value="Carrot">Carrot (गाजर)</option>
+                      <option value="Kukumber Green">Cucumber Green (खीरा)</option>
+                      <option value="Onion">Onion (प्याज़)</option>
+                      <option value="Pumpkin">Pumpkin (कद्दू)</option>
+                      <option value="Beetroot">Beetroot (चुकंदर)</option>
+                      <option value="Other">Other (अन्य)</option>
                     </motion.select>
+                    {formData.vegetableType === 'Other' && (
+                      <div className="mt-3">
+                        <InputGroup 
+                          label="Specify Vegetable (सब्जी का नाम बताएं)" 
+                          name="otherVegetable" 
+                          onChange={handleChange} 
+                        />
+                      </div>
+                    )}
                   </div>
                   <InputGroup label="Weight Required (kg)" name="weight" onChange={handleChange} />
                 </div>
