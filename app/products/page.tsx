@@ -7,22 +7,22 @@ import { Check, ArrowRight, Leaf, ChefHat, Package } from "lucide-react";
 import Link from "next/link";
 
 const vegetables = [
-  { name: "Methi", hindiName: "मेथी", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/methi.jpg" },
-  { name: "Palak", hindiName: "पालक", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/palak.jpg" },
-  { name: "Tomato", hindiName: "टमाटर", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg" },
-  { name: "Mirchi", hindiName: "मिर्ची", type: "Spice", desc: "Stemless, Chopped", image: "/product/mirchi.jpeg" },
-  { name: "Potato", hindiName: "आलू", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg" },
-  { name: "Brinjal", hindiName: "बैंगन", type: "Fruit", desc: "Whole, Diced", image: "/product/brinjal.jpeg" },
-  { name: "Sponge Gourd", hindiName: "तोरई", type: "Gourd", desc: "Fresh, Cut", image: "/product/sponge gourd.jpg" },
-  { name: "Bhendi", hindiName: "भिंडी", type: "Pod", desc: "Fresh, Cut", image: "/product/bhendi.jpg" },
-  { name: "Couli Flower", hindiName: "फूलगोभी", type: "Flower", desc: "Florets, Cleaned", image: "/product/couli flower.jpg" },
-  { name: "Gavar", hindiName: "गवार", type: "Legume", desc: "Fresh, Cleaned", image: "/product/gavar.jpg" },
-  { name: "Cabbage", hindiName: "पत्ता गोभी", type: "Leafy", desc: "Shredded, Whole", image: "/product/cabbage.jpg" },
-  { name: "Carrot", hindiName: "गाजर", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg" },
-  { name: "Kukumber Green", hindiName: "खीरा", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg" },
-  { name: "Onion", hindiName: "प्याज", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg" },
-  { name: "Pumpkin", hindiName: "कद्दू", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg" },
-  { name: "Beetroot", hindiName: "चुकंदर", type: "Root", desc: "Peeled, Diced", image: "/product/Beetroot.png" },
+  { name: "Methi", hindiName: "मेथी", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/methi.jpg", price: 109 },
+  { name: "Palak", hindiName: "पालक", type: "Leafy", desc: "Fresh, Cleaned", image: "/product/palak.jpg", price: 119 },
+  { name: "Tomato", hindiName: "टमाटर", type: "Fruit", desc: "Whole, Puree, Diced", image: "/product/tomato.jpg", price: 79 },
+  { name: "Mirchi", hindiName: "मिर्ची", type: "Spice", desc: "Stemless, Chopped", image: "/product/mirchi.jpeg", price: 109 },
+  { name: "Potato", hindiName: "आलू", type: "Root", desc: "Peeled, Cubed, Sliced", image: "/product/potato.jpg", price: 52 },
+  { name: "Brinjal", hindiName: "बैंगन", type: "Fruit", desc: "Whole, Diced", image: "/product/brinjal.jpeg", price: 79 },
+  { name: "Sponge Gourd", hindiName: "तोरई", type: "Gourd", desc: "Fresh, Cut", image: "/product/sponge gourd.jpg", price: 99 },
+  { name: "Bhendi", hindiName: "भिंडी", type: "Pod", desc: "Fresh, Cut", image: "/product/bhendi.jpg", price: 109 },
+  { name: "Couli Flower", hindiName: "फूलगोभी", type: "Flower", desc: "Florets, Cleaned", image: "/product/couli flower.jpg", price: 71 },
+  { name: "Gavar", hindiName: "गवार", type: "Legume", desc: "Fresh, Cleaned", image: "/product/gavar.jpg", price: 119 },
+  { name: "Cabbage", hindiName: "पत्ता गोभी", type: "Leafy", desc: "Shredded, Whole", image: "/product/cabbage.jpg", price: 59 },
+  { name: "Carrot", hindiName: "गाजर", type: "Root", desc: "Peeled, Diced, Julienne", image: "/product/carrot.jpg", price: 59 },
+  { name: "Kukumber Green", hindiName: "खीरा", type: "Gourd", desc: "Sliced, Whole", image: "/product/kukumber green.jpg", price: 64 },
+  { name: "Onion", hindiName: "प्याज", type: "Bulb", desc: "Peeled, Sliced, Diced", image: "/product/onion.jpg", price: 59 },
+  { name: "Pumpkin", hindiName: "कद्दू", type: "Gourd", desc: "Diced, Sliced", image: "/product/pumpkin.jpeg", price: 59 },
+  { name: "Beetroot", hindiName: "चुकंदर", type: "Root", desc: "Peeled, Diced", image: "/product/Beetroot.png", price: 59 },
 ];
 
 const cuts = [
@@ -138,7 +138,10 @@ export default function Products() {
                         {veg.type}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-500 mb-4 flex-1">{veg.desc}</p>
+                    <p className="text-sm text-gray-500 mb-2 flex-1">{veg.desc}</p>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-base font-semibold text-green-700">₹{veg.price} / kg</span>
+                    </div>
                     <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                       <div className="flex flex-col">
                         <span className="text-xs text-gray-400">Daily Fresh</span>

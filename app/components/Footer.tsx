@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Package } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Package, Youtube } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -26,10 +26,10 @@ export default function Footer() {
               Revolutionizing the vegetable supply chain with technology, transparency, and trust. Connecting farmers directly to businesses.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="#" icon={<Facebook className="w-5 h-5" />} />
-              <SocialLink href="#" icon={<Twitter className="w-5 h-5" />} />
-              <SocialLink href="#" icon={<Instagram className="w-5 h-5" />} />
-              <SocialLink href="#" icon={<Linkedin className="w-5 h-5" />} />
+              {/* <SocialLink href="#" icon={<Facebook className="w-5 h-5" />} /> */}
+              <SocialLink href="https://www.youtube.com/@Vegeebook" icon={<Youtube className="w-5 h-5" />} />
+              <SocialLink href="https://www.instagram.com/vegeebook/" icon={<Instagram className="w-5 h-5" />} />
+              <SocialLink href="https://www.linkedin.com/in/keshav-hissal-44150a264/" icon={<Linkedin className="w-5 h-5" />} />
             </div>
           </div>
 

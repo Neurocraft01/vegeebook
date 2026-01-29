@@ -176,7 +176,7 @@ export default function Contact() {
                       <option value="Sponge Gourd">Sponge Gourd (तोरई)</option>
                       <option value="Bhendi">Bhendi (भिंडी)</option>
                       <option value="Couli Flower">Cauliflower (फूलगोभी)</option>
-                      <option value="Gavar">Gavar (ग्वार फली)</option>
+                      <option value="Gavar">Gavar (गवार)</option>
                       <option value="Cabbage">Cabbage (पत्ता गोभी)</option>
                       <option value="Carrot">Carrot (गाजर)</option>
                       <option value="Kukumber Green">Cucumber Green (खीरा)</option>

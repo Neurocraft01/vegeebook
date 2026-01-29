@@ -200,6 +200,26 @@ export default function About() {
             />
           </div>
         </section>
+        
+        {/* Certification */}
+        <section id="certificate" className="scroll-mt-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <FadeIn>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Certification</h2>
+              <p className="text-gray-600 mb-6">Our official certificate demonstrating quality and compliance.</p>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="relative w-full md:w-2/3 mx-auto h-64 md:h-96 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/certificate.jpeg"
+                  alt="Certificate"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </section>
 
       </div>
     </div>
