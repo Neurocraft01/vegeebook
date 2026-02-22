@@ -26,7 +26,7 @@ export default function Footer() {
               Revolutionizing the vegetable supply chain with technology, transparency, and trust. Connecting farmers directly to businesses.
             </p>
             <div className="flex space-x-4">
-              {/* <SocialLink href="#" icon={<Facebook className="w-5 h-5" />} /> */}
+              <SocialLink href="https://www.facebook.com/profile.php?id=61587822153678" icon={<Facebook className="w-5 h-5" />} /> 
               <SocialLink href="https://www.youtube.com/@Vegeebook" icon={<Youtube className="w-5 h-5" />} />
               <SocialLink href="https://www.instagram.com/vegeebook/" icon={<Instagram className="w-5 h-5" />} />
               <SocialLink href="https://www.linkedin.com/in/keshav-hissal-44150a264/" icon={<Linkedin className="w-5 h-5" />} />
