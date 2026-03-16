@@ -158,12 +158,6 @@ export default function About() {
               delay={0.2}
             />
             <TeamMember 
-              name="Shekh Jabir" 
-              role=" Chief Operating Officer" 
-              image="/images/team/team_Shekh Jabir.jpeg"
-              delay={0.4}
-            />
-            <TeamMember 
               name="Prahlad Damdhar" 
               role="Chief Marketing Officer" 
               image="/images/team/team_prahlad damdhar.jpeg"
